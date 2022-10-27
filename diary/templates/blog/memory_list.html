@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Blog</a>
+    </nav>
+    <h1> ----------------------------- </h1>
+    {% for memory in list_qs %}
+        <h2> 
+            <a href="/diary/{{ memory.pk }}/">
+            {{ memory.title }}
+            </a>
+        </h2>
+        <h3>{{ memory.updated_at }}업로드</h3>
+        <h3>{{ memory.created_at }}수정</h3>
+        <h1> ----------------------------- </h1>
+    {% endfor %}
+
+   
+    <hr/>
+    <a href="/diary/new/">새 일기 쓰기</a>
+</body>
+</html>
